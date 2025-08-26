@@ -4,4 +4,5 @@ This project is a wrapper of https://github.com/vgteam/vg to apply bisulfite map
 
 # Download
 
-https://github.com/vgteam/vg/releases
+- https://github.com/vgteam/vg/releases
+- https://github.com/shenwei356/seqkit/releases
