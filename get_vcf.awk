@@ -5,6 +5,8 @@ BEGIN{
     printf("##fileformat=VCFv4.1\n")
     printf("##reference=%s\n", genome_out)
     printf("#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\n")
+    # Delete genome_out from ARGV. Then get_vcf.awk does not process it.
+    delete ARGV[1]
 }
 
 {

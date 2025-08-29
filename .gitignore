@@ -1,2 +1,5 @@
 reference
 test_data
+samtools-1.22.1
+bcftools-1.22
+.vscode/settings.json
