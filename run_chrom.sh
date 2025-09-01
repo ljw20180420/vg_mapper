@@ -94,16 +94,17 @@ done < ${genome_in}.fai
 declare -a vg_pruned_graphs
 for vg_graph in ${vg_graphs[@]}
 do
-    ./vg prune --progress \
-        --restore-paths ${vg_graph} > ${vg_graph%.*}.pruned.vg
+    # ./vg prune --progress \
+    #     --restore-paths ${vg_graph} > ${vg_graph%.*}.pruned.vg
     vg_pruned_graphs+=(${vg_graph%.*}.pruned.vg)
 done
 
-# systemd-run --scope --user \
-#     --property MemoryMax=50G \
-#     ./vg index --progress \
-#         --gcsa-out ${output_dir}/${genome_stem}.bisulfite.gcsa \
-#         ${vg_pruned_graphs[@]}
+# Index chrom 18 (${vg_pruned_graphs[@]:17:1})
+systemd-run --scope --user \
+    --property MemoryMax=50G \
+    ./vg index --progress \
+        --gcsa-out ${output_dir}/${genome_stem}.bisulfite.gcsa \
+        ${vg_pruned_graphs[@]:17:1}
 
 # # Map
 # ./vg map \

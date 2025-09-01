@@ -22,6 +22,6 @@ In bisulfite, `C` other than `CpG` of genome becomes `T`. `C` in `CpG` either ke
 
 # Usage
 
-See `run.sh`.
+See `run_chrom.sh`.
 
 # TODO
